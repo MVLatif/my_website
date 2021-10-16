@@ -15,7 +15,6 @@ params:
     address:
       - city: London
         country: United Kingdom
-        street: Street
         title: Address
     buttonClear: Clear
     buttonSend: Send message
@@ -24,7 +23,7 @@ params:
         title: Email
     enable: yes
     phone:
-      - phone: (000) 000-0000 x1234
+      - phone: (+44) 7770640640
         title: Phone
   custom_css: []
   custom_js: []
@@ -107,11 +106,6 @@ params:
   two:
     buttonText: Get Started
     enable: yes
-    subtitle: "Nullam et orci eu lorem consequat tincidunt vivamus et sagittis libero.
-      \n    Mauris aliquet magna magna sed nunc rhoncus pharetra. \n    Pellentesque
-      condimentum sem. In efficitur ligula tate urna. Maecenas laoreet massa vel lacinia
-      pellentesque lorem ipsum dolor. \n    Nullam et orci eu lorem consequat tincidunt.
-      Vivamus et sagittis libero.\n    Mauris aliquet magna magna sed nunc rhoncus
-      amet pharetra et feugiat tempus."
-    title: Massa libero
+    subtitle: Welcome to my website where I have outlined a few things I enjoy to do in my spare time and to give a bit of insight into my life and background. 
+    title: Introduction 
     url: blogs
