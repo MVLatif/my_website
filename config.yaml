@@ -1,6 +1,6 @@
 baseURL: https://margheritalatif.netlify.app
 languageCode: en-us
-title: Portfolio fWebsite or Margherita Latif
+title: Portfolio Website or Margherita Latif
 theme: forty
 googleAnalytics: ''
 disqusShortname: ''
@@ -11,16 +11,16 @@ params:
      This is my Website for Data Analytics for Finance. 
     title: Hi, my name is Margherita Latif
   blog: {}
-  contact:
+  contact: 
     address:
-      - city: City, ST 00000
-        country: Country
+      - city: London
+        country: United Kingdom
         street: Street
         title: Address
     buttonClear: Clear
     buttonSend: Send message
     email:
-      - email: example@domain.com
+      - email: mlatif.mfa2022@london.edu
         title: Email
     enable: yes
     phone:
@@ -57,7 +57,7 @@ params:
         label: LinkedIn
         url: https://www.linkedin.com
   image: ''
-  name: Your name
+  name: Margherita Latif
   navigation:
     button1:
       - name: Get Started
@@ -80,30 +80,30 @@ params:
   tiles:
     enable: yes
     showcase:
-      - image: pic01.jpg
-        subtitle: Ipsum Dolor Sit Amet
-        title: Aliquam
-        url: blogs/aliquam
-      - image: pic02.jpg
-        subtitle: Feugiat Amet Tempus
-        title: Tempus
-        url: blogs/tempus
-      - image: pic03.jpg
-        subtitle: Lorem Etiam Nullam
-        title: Magna
-        url: blogs/magna
-      - image: pic04.jpg
-        subtitle: Nisl Sed Aliquam
-        title: Ipsum
-        url: blogs/ipsum
-      - image: pic05.jpg
-        subtitle: Ipsum Dolor Sit Amet
-        title: Consequat
-        url: blogs/ipsum
-      - image: pic06.jpg
-        subtitle: Feugiat Amet Tempus
-        title: Etiam
-        url: blogs/ipsum
+      - image: baia-sardinia-costa-smeralda.jpg
+        subtitle: The place where I spent most of my time as a kid with my Italian family
+        title: Sardegna
+        url: blogs/Sardegna
+      - image: darjeeling-chasing-train.jpg
+        subtitle: I am a movie fanatic; one of my favourite directors is Wes Anderson
+        title: Movies
+        url: blogs/Movies
+      - image: bn_educated.jpg
+        subtitle: I enjoy reading non-fiction books for example, Educated by Tara Westover
+        title: Non-Fiction Books 
+        url: blogs/Non-Fiction Books
+      - image: kazmal007_malevich_female_torso_large.jpg
+        subtitle: I studied Modern Languages, with a major in Russian and Italian at the University of Bristol
+        title: Undegraduate degree
+        url: blogs/Undergraduate degree
+      - image: cooking.jpg
+        subtitle: I find it relaxing to cook and I have inspiration from my italian and pakistani heritage 
+        title: Cooking
+        url: blogs/Cooking
+      - image: tennis.jpg
+        subtitle: I have played tennis since I was a kid and have participated in teams at school and university
+        title: Tennis 
+        url: blogs/Tennis
   two:
     buttonText: Get Started
     enable: yes
