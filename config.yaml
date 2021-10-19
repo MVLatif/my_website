@@ -46,7 +46,7 @@ params:
       - icon: fa-linkedin
         label: LinkedIn
         url: www.linkedin.com/in/margherita-latif-b02047175
-  image: ''
+  image: Italy.jpg
   name: Margherita Latif
   navigation:
     button1:
@@ -77,11 +77,11 @@ params:
       - image: JP.jpg
         subtitle: By creating a geom error bar graph, I was able to visualise whether the mean IMDB rating for Steven Spielberg and Tim Burton are the same or not
         title: IMDB ratings
-        url: blogs/imdbratings
+        url: blogs/imdb
       - image: Gender.jpg
         subtitle: By plotting a histogram, scatterplot and boxplot, I was able to visualise the data regarding gender, pay and experience.
-        title: Correlation between Salary, Gender and Experience
-        url: blogs/correlationbetweensalarygenderandexperience
+        title: Pay Discrimination
+        url: blogs/gender
       - image: Brexit.jpg
         subtitle: Analysis of Brexit Results 
         title: Brexit results
@@ -90,10 +90,10 @@ params:
         subtitle: Analysis of bike sharing in London 
         title: Transport for London Bike Sharing
         url: blogs/tfl
-      - image: tennis.jpg
-        subtitle: I have played tennis since I was a kid and have participated in teams at school and university
-        title: Tennis 
-        url: blogs/Tennis
+      - image: politics.jpg
+        subtitle: I was interested to see the correlation between peoples' views on politics and their views on climate change. The analysis carried out helped me understand this further. 
+        title: Correlation between Political views and environmental views  
+        url: blogs/politics
   two:
     buttonText: Get Started
     enable: yes

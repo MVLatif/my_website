@@ -7,7 +7,7 @@ description: By plotting a histogram, scatterplot and boxplot, I was able to vis
 draft: false
 image: Gender.jpg
 keywords: ""
-slug: correlationbetweensalarygenderandexperience
+slug: gender
 title: Salary, Gender and Experience
 ---
 

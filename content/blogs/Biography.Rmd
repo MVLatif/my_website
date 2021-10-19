@@ -1,0 +1,22 @@
+---
+title: "Biography"
+date: '2021-10-31T21:28:43-05:00'
+description: ''
+draft: no
+image: Sardegna.jpg
+keywords: ''
+slug: biography
+categories:
+- ''
+- ''
+---
+
+```{r load-libraries, echo=FALSE}
+library(tidyverse)  # Load ggplot2, dplyr, and all the other tidyverse packages
+```
+
+I am half Italian, half Pakistani but I grew up in London. I completed my undergraduate degree at the University of Bristol and graduated in Modern Languages: Russian and Italian. The photo in this tile is taken in Sardegna, an island off the coast of Italy. I spent most of my childhood there and have great memories of various trips there with family and friends. 
+
+To list a few of my hobbies, I enjoy to travel and explore new places. During my year abroad at university I worked in Milan for six months and studied in St. Petersburg, Russia. The Russian culture in particular fascinates me and I have since travelled to other parts of Russia, including Moscow, Yaroslavl and Suzdal, three cities are included in the golden ring. 
+
+I enjoy reading non-fiction books in my spare time, particularly on current affairs. I highly enjoyed freakonomics which applies rational economic analysis to everyday situations and explains how the way we normally make decisions is often irrational. I also enjoyed The Great Disruption by Paul Gilding, an Australian environmentalist who discusses the environmental and economic crisis we face. 

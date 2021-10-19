@@ -1,0 +1,166 @@
+---
+title: "Correlation between Political views and environmental views"
+date: '2021-10-31T21:28:43-05:00'
+description: I was interested to see the correlation between peoples' views on politics and their views on climate change. The analysis carried out helped me understand this further.
+draft: no
+image: politics.jpg
+keywords: ''
+slug: politics
+categories:
+- ''
+- ''
+---
+```{r, setup, include=FALSE}
+knitr::opts_chunk$set(
+  message = FALSE, 
+  warning = FALSE, 
+  tidy=FALSE,     # display code as typed
+  size="small")   # slightly smaller font for code
+options(digits = 3)
+
+# default figure size
+knitr::opts_chunk$set(
+  fig.width=6.75, 
+  fig.height=6.75,
+  fig.align = "center"
+)
+```
+
+
+```{r load-libraries, include=FALSE}
+library(tidyverse)  # Load ggplot2, dplyr, and all the other tidyverse packages
+library(mosaic)
+library(ggthemes)
+library(lubridate)
+library(here)
+library(skimr)
+library(janitor)
+library(httr)
+library(readxl)
+library(vroom)
+```
+
+ Global warming and political views (GSS)
+
+[A 2010 Pew Research poll](https://www.pewresearch.org/2010/10/27/wide-partisan-divide-over-global-warming/) asked 1,306 Americans, "From what you've read and heard, is there solid evidence that the average temperature on earth has been getting warmer over the past few decades, or not?"
+
+
+In this exercise we analyze whether there are any differences between the proportion of people who believe the earth is getting warmer and their political ideology. As usual, from the **survey sample data**, we will use the proportions to estimate values of *population parameters*. The file has 2253 observations on the following 2 variables:
+
+- `party_or_ideology`: a factor (categorical) variable with levels Conservative Republican, Liberal Democrat, Mod/Cons Democrat, Mod/Lib Republican
+- `response` : whether the respondent believes the earth is warming or not, or Don't know/ refuse to answer
+
+```{r, read_global_warming_pew_data}
+global_warming_pew <- read_csv(here::here("data", "global_warming_pew.csv"))
+```
+
+You will also notice that many responses should not be taken into consideration, like "No Answer", "Don't Know", "Not applicable", "Refused to Answer".
+
+We will be constructing three 95% confidence intervals to estimate population parameters, for the % who believe that **Earth is warming**, accoridng to their party or ideology. You can create the CIs using the formulas by hand, or use `prop.test()`-- just rememebr to exclude the Dont know / refuse to answer!
+
+```{r}
+#We have a binomial variable here, [0,1] for [Earth warming & Not warming]
+binglob <- global_warming_pew %>% 
+  #Calculate the relevant inputs
+  count(party_or_ideology, response) %>% 
+  #Disregard people who did not say anything
+  filter(response!="Don't know / refuse to answer") %>% 
+  #Calculate the total observations
+  mutate(sum_n=sum(n))
+binglob
+```
+
+```{r}
+binglob <- binglob %>% 
+  #Filter only those we are interested in
+  filter(response=="Earth is warming") %>% 
+  #For each party or ideology
+  group_by(party_or_ideology) %>% 
+  #Calculate upper and lower confidence intervals
+  mutate(confint_low=prop.test(n,sum_n,conf.level=0.95)$conf.int[1],confint_upp=prop.test(n,sum_n,conf.level=0.95)$conf.int[2])
+binglob
+```
+
+
+Does it appear that whether or not a respondent believes the earth is warming is independent of their party ideology? You may want to 
+
+You may want to read on [The challenging politics of climate change](https://www.brookings.edu/research/the-challenging-politics-of-climate-change/)
+
+# Biden's Approval Margins
+
+As we saw in class, fivethirtyeight.com has detailed data on [all polls that track the president's approval ](https://projects.fivethirtyeight.com/biden-approval-ratings)
+
+```{r, cache=TRUE}
+
+# Import approval polls data directly off fivethirtyeight website
+approval_polllist <- read_csv('https://projects.fivethirtyeight.com/biden-approval-data/approval_polllist.csv')
+
+# Use `lubridate` to fix dates, as they are given as characters.
+approval_polllist$modeldate <- mdy(approval_polllist$modeldate)
+approval_polllist$startdate <- mdy(approval_polllist$startdate)
+approval_polllist$enddate <- mdy(approval_polllist$enddate)
+
+glimpse(approval_polllist)
+
+```
+
+
+```{r lubridate and plot}
+
+approval_polllist2 <- approval_polllist %>% 
+  mutate (year = lubridate::year(enddate),
+          month = lubridate::month(enddate, label = TRUE),
+          week = isoweek(enddate))
+```
+## Create a plot
+
+```{r lubridate and plot2}
+
+plotter <- approval_polllist2 %>% 
+  group_by(week) %>% 
+  summarize(avg_app=approve-disapprove) %>% 
+ summarise(
+    mean_avg_app = mean(avg_app),
+    sd_avg_app = sd(avg_app),
+    count = n(),
+    #Here calculate standard error SD/sqrt(n)
+    se_avg_app = sd_avg_app/ sqrt(count),
+    #Then calculate the t score
+    t_critical = qt(0.95, count - 1 ),
+    #Calculate 95 prct
+    lower = mean_avg_app - t_critical * se_avg_app,
+    upper = mean_avg_app + t_critical * se_avg_app
+  ) 
+```
+```{r lubridate_and_plot3,out.width="100%}
+
+ggplot(plotter, aes(x=week,y=mean_avg_app))+
+  #Add the confidence interval
+  geom_ribbon(aes(ymin=lower,ymax=upper),fill="grey70",alpha=0.2,color="orange")+
+  #Add the scatters
+  geom_point(color="orange")+
+  #Draw a line between scatters
+  geom_line(color="orange")+
+  #Add blue line
+  geom_smooth(se=F)+
+  #Draw the horizontal line
+  geom_hline(yintercept=0,color="orange",size=2)+
+  #Theme & titles
+  theme_light()+
+  labs(title="Estimating Approval Margin (Approve-Disapprove) for Joe Biden", subtitle="Weekly Average of All Polls",y="Average Approval Margin (Approve-Disapprove)",x="Week of the Year")
+
+```
+
+What I would like you to do is to calculate the average net approval rate (approve- disapprove) for each week since he got into office. I want you plot the net approval, along with its 95% confidence interval. There are various dates given for each poll, please use `enddate`, i.e., the date the poll ended.
+
+Also, please add an orange line at zero. Your plot should look like this:
+
+```{r trump_margins, echo=FALSE, out.width="100%"}
+knitr::include_graphics(here::here("images", "biden_approval_margin.png"), error = FALSE)
+```
+
+## Compare Confidence Intervals
+
+Compare the confidence intervals for `week 3` and `week 25`. Can you explain what's going on? One paragraph would be enough.
+
+Week 3 has the highest confidence interval and week 25 has the lowest confidence interval. The change means that the confidence interval decreased during the time, which means that the sampling error became smaller, since the statistical rejection of the null hypothesis had a higher reliability and be more confident, the higher the accuracy in turn.
