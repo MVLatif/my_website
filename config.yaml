@@ -86,7 +86,6 @@ params:
         subtitle: Analysis of bike sharing in London 
         title: Transport for London Bike Sharing
         url: blogs/tfl
-
   two:
     buttonText: Get Started
     enable: yes
