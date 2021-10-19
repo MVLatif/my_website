@@ -73,7 +73,7 @@ params:
       - image: baia-sardinia-costa-smeralda.jpg
         subtitle: Allow me to introduce myself 
         title: Biography
-        url: blogs/Biography
+        url: blogs/biography
       - image: JP.jpg
         subtitle: By creating a geom error bar graph, I was able to visualise whether the mean IMDB rating for Steven Spielberg and Tim Burton are the same or not
         title: IMDB ratings
