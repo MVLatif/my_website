@@ -1,16 +1,18 @@
 ---
-title: Pay Discrimination
-date: '2021-10-31T21:28:43-05:00'
-description:
-
-draft: no
-image: Gender.jpg
-keywords: ''
-slug: gender
 categories:
-- ''
-- ''
+- ""
+- ""
+date: "2017-10-31T21:28:43-05:00"
+description: ""
+draft: false
+image: Gender.jpg
+keywords: ""
+slug: gender
+title: Pay Discrimination
 ---
+
+
+
 ```{r, setup, echo=FALSE}
 knitr::opts_chunk$set(
   message = FALSE, 
