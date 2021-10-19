@@ -73,7 +73,7 @@ params:
       - image: JP.jpg
         subtitle: By creating a geom error bar graph, I was able to visualise whether the mean IMDB rating for Steven Spielberg and Tim Burton are the same or not
         title: IMDB ratings
-        url: blogs/wtf1
+        url: blogs/imdb
       - image: Gender.jpg
         subtitle: By plotting a histogram, scatterplot and boxplot, I was able to visualise the data regarding gender, pay and experience.
         title: Pay Discrimination
