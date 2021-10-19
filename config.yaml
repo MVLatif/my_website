@@ -82,14 +82,14 @@ params:
         subtitle: By plotting a histogram, scatterplot and boxplot, I was able to visualise the data regarding gender, pay and experience.
         title: Correlation between Salary, Gender and Experience
         url: blogs/correlationbetweensalarygenderandexperience
-      - image: kazmal007_malevich_female_torso_large.jpg
-        subtitle: I studied Modern Languages, with a major in Russian and Italian at the University of Bristol
-        title: Undegraduate degree
-        url: blogs/Undergraduate degree
-      - image: cooking.jpg
-        subtitle: I find it relaxing to cook and I have inspiration from my italian and pakistani heritage 
-        title: Cooking
-        url: blogs/Cooking
+      - image: Brexit.jpg
+        subtitle: Analysis of Brexit Results 
+        title: Brexit results
+        url: blogs/brexit
+      - image: Boris.jpg
+        subtitle: Analysis of bike sharing in London 
+        title: Transport for London Bike Sharing
+        url: blogs/tfl
       - image: tennis.jpg
         subtitle: I have played tennis since I was a kid and have participated in teams at school and university
         title: Tennis 

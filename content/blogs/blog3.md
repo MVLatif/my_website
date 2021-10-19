@@ -3,13 +3,11 @@ categories:
 - ""
 - ""
 date: "2021-10-31T22:26:13-05:00"
-description: Nullam et orci eu lorem consequat tincidunt vivamus et sagittis magna
-  sed nunc rhoncus condimentum sem. In efficitur ligula tate urna. Maecenas massa
-  sed magna lacinia magna pellentesque lorem ipsum dolor. Nullam et orci eu lorem
-  consequat tincidunt. Vivamus et sagittis tempus.
+description: By plotting a histogram, scatterplot and boxplot, I was able to visualise the data regarding gender, pay and experience.
 draft: false
-image: pic08.jpg
+image: Gender.jpg
 keywords: ""
-slug: tempus
-title: Tempus
+slug: correlationbetweensalarygenderandexperience
+title: Salary, Gender and Experience
 ---
+
