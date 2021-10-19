@@ -14,7 +14,7 @@ description: I would like you to explore whether the mean IMDB rating for Steven
 draft: no
 image: JP.jpg
 keywords: ''
-slug: imdb
+slug: wtf1
 categories:
 - ''
 - ''
@@ -26,7 +26,7 @@ categories:
 <div id="imdb-ratings-differences-between-directors" class="section level1">
 <h1>IMDB ratings: Differences between directors</h1>
 <p>Recall the IMBD ratings data. I would like you to explore whether the mean IMDB rating for Steven Spielberg and Tim Burton are the same or not. I have already calculated the confidence intervals for the mean ratings of these two directors and as you can see they overlap.</p>
-<p><img src="C:/Users/kchristodoulou/Desktop/delete/mvlatif_my_website/images/directors.png" width="100%" style="display: block; margin: auto;" /></p>
+<p><img src="/img/directors.png" width="100%" /></p>
 <p>First, I would like you to reproduce this graph. You may find <code>geom_errorbar()</code> and <code>geom_rect()</code> useful.</p>
 <p>I would like you to explore whether the mean IMDB rating for Steven Spielberg and Tim Burton are the same or not. Then I ran a hypothesis test using both t.test and infer package to understand from a null distribution where I would assume zero difference between the two
 In addition, you will run a hpothesis test. You should use both the <code>t.test</code> command and the <code>infer</code> package to simulate from a null distribution, where you assume zero difference between the two.</p>
@@ -95,7 +95,7 @@ summary_stat %&gt;%
        subtitle = &quot;95% confidence intervals overlap&quot;,
        x=&quot;Mean IMDB Rating&quot;, y=&quot;Director&quot;)+
   theme(text = element_text(size = 12))</code></pre>
-<p><img src="/blogs/imdb_files/figure-html/unnamed-chunk-2-1.png" width="648" style="display: block; margin: auto;" /></p>
+<p><img src="/blogs/imdb_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
 <pre class="r"><code># Hypothesis test - H0: Tim Burton and Steven Spielberg films have the same mean 
 
 # use the infer package to construct a 95% CI for rating
