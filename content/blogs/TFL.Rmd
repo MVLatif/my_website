@@ -1,15 +1,16 @@
 ---
-title: "Transport for London Bike Sharing"
-date: '2021-10-31T22:26:09-05:00'
-description: 
-draft: no
-image: Boris.jpg
-keywords: ''
-slug: tfl
 categories:
-- ''
-- ''
+- ""
+- ""
+date: "2017-10-31T21:28:43-05:00"
+description: ""
+draft: false
+image: Boris.jpg
+keywords: ""
+slug: tfl
+title: Transport for London Bike Sharing
 ---
+
 
 ```{r, setup, include=FALSE}
 knitr::opts_chunk$set(
