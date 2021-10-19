@@ -32,7 +32,7 @@ The data comes from [Elliott Morris](https://www.thecrosstab.com/), who cleaned 
 
 Our main outcome variable (or y) is `leave_share`, which is the percent of votes cast in favour of Brexit, or leaving the EU. Each row is a UK [parliament constituency](https://en.wikipedia.org/wiki/United_Kingdom_Parliament_constituencies).
 
-To get a sense of the spread, or distribution, of the data, we can plot a histogram, a density plot, and the empirical cumulative distribution function of the leave % in all constituencies.
+To get a sense of the spread, or distribution, of the data, we can plot a histogram, a density plot, and the empirical cumulative distribution function of the leave % in all constituencies. 
 
 ```{r brexit_histogram, warning=FALSE, message=FALSE}
 
