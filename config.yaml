@@ -90,7 +90,7 @@ params:
         subtitle: Analysis of bike sharing in London 
         title: Transport for London Bike Sharing
         url: blogs/tfl
-      - image: politics.jpg
+      - image: undergraduate.jpg
         subtitle: I was interested to see the correlation between peoples' views on politics and their views on climate change. The analysis carried out helped me understand this further. 
         title: Correlation between Political views and environmental views  
         url: blogs/politics

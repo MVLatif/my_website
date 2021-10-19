@@ -1,6 +1,14 @@
 ---
 title: "Brexit"
-output: html_document
+date: '2021-10-31T22:26:09-05:00'
+description: 
+draft: no
+image: Brexit.jpg
+keywords: ''
+slug: brexit
+categories:
+- ''
+- ''
 ---
 
 ```{r load-libraries, warning=FALSE, message=FALSE, echo=FALSE}
