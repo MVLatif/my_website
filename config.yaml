@@ -40,21 +40,12 @@ params:
         text: 'Design: '
         url: https://www.html5up.net
     social:
-      - icon: fa-twitter
-        label: Twitter
-        url: https://www.twitter.com
-      - icon: fa-facebook
-        label: Facebook
-        url: https://www.facebook.com
-      - icon: fa-instagram
-        label: Instagram
-        url: https://www.instagram.com
       - icon: fa-github
         label: GitHub
-        url: https://www.github.com
+        url: https://github.com/MVLatif/my_website
       - icon: fa-linkedin
         label: LinkedIn
-        url: https://www.linkedin.com
+        url: www.linkedin.com/in/margherita-latif-b02047175
   image: ''
   name: Margherita Latif
   navigation:
@@ -74,23 +65,23 @@ params:
       - name: Elements
         url: elements.html
     menu: Menu
-    subtitle: By HTML5 Up
-    title: Forty
+    subtitle: Latif 
+    title: Margherita 
   tiles:
     enable: yes
     showcase:
       - image: baia-sardinia-costa-smeralda.jpg
-        subtitle: The place where I spent most of my time as a kid with my Italian family
-        title: Sardegna
-        url: blogs/Sardegna
-      - image: darjeeling-chasing-train.jpg
-        subtitle: I am a movie fanatic; one of my favourite directors is Wes Anderson
-        title: Movies
-        url: blogs/Movies
-      - image: bn_educated.jpg
-        subtitle: I enjoy reading non-fiction books for example, Educated by Tara Westover
-        title: Non-Fiction Books 
-        url: blogs/Non-Fiction Books
+        subtitle: Allow me to introduce myself 
+        title: Biography
+        url: blogs/Biography
+      - image: JP.jpg
+        subtitle: By creating a geom error bar graph, I was able to visualise whether the mean IMDB rating for Steven Spielberg and Tim Burton are the same or not
+        title: IMDB ratings
+        url: blogs/imdbratings
+      - image: Gender.jpg
+        subtitle: By plotting a histogram, scatterplot and boxplot, I was able to visualise the data regarding gender, pay and experience.
+        title: Correlation between Salary, Gender and Experience
+        url: blogs/correlationbetweensalarygenderandexperience
       - image: kazmal007_malevich_female_torso_large.jpg
         subtitle: I studied Modern Languages, with a major in Russian and Italian at the University of Bristol
         title: Undegraduate degree
