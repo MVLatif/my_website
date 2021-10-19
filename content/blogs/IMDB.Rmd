@@ -29,12 +29,6 @@ knitr::opts_chunk$set(
   size="small")   # slightly smaller font for code
 options(digits = 3)
 
-# default figure size
-knitr::opts_chunk$set(
-  fig.width=6.75, 
-  fig.height=6.75,
-  fig.align = "center"
-)
 ```
 
 
@@ -59,7 +53,7 @@ Recall the IMBD ratings data. I would like you to explore whether the mean IMDB 
 
 
 ```{r directors, echo=FALSE, out.width="100%"}
-knitr::include_graphics(here::here("images", "directors.png"), error = FALSE)
+knitr::include_graphics("/img/directors.png", error = FALSE)
 ```
 
 First, I would like you to reproduce this graph. You may find `geom_errorbar()` and `geom_rect()` useful.

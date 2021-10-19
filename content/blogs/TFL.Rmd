@@ -19,12 +19,6 @@ knitr::opts_chunk$set(
   size="small")   # slightly smaller font for code
 options(digits = 3)
 
-# default figure size
-knitr::opts_chunk$set(
-  fig.width=6.75, 
-  fig.height=6.75,
-  fig.align = "center"
-)
 ```
 
 
@@ -120,7 +114,7 @@ bikemerged %>%
 ```
 
 
-```{r expected rentals weekly"}
+```{r expected_rentals_weekly}
 library(scales)
 #Calculate expected weekly rentals
 bikew1 <- bike %>% 
@@ -156,10 +150,11 @@ bikeweeklymerged %>%
   theme(strip.background=element_blank())+
   scale_x_continuous(breaks=c(13,26,39,53))+
   facet_wrap(~year)+
-  labs(title="Weekly changes in TfL bike rentals", subtitle="% change from weekly averages calculated between 2016-2019",x="week",y="% change")
+  labs(title="Weekly changes in TfL bike rentals", 
+       subtitle="% change from weekly averages calculated between 2016-2019",x="week",y="% change")
 ```
 
 
-```{r tfl_percent_change, echo=FALSE, out.width="100%"}
-knitr::include_graphics(here::here("images", "tfl_weekly.png"), error = FALSE)
-```
+<!-- ```{r tfl_percent_change, echo=FALSE, out.width="100%"} -->
+<!-- knitr::include_graphics("/img/tfl_weekly.png", error = FALSE) -->
+<!-- ``` -->
