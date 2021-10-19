@@ -45,7 +45,7 @@ params:
         url: https://github.com/MVLatif/my_website
       - icon: fa-linkedin
         label: LinkedIn
-        url: www.linkedin.com/in/margherita-latif-b02047175
+        url: https://www.linkedin.com/in/margherita-latif-b02047175/
   image: Italy.jpg
   name: Margherita Latif
   navigation:
@@ -66,7 +66,7 @@ params:
   tiles:
     enable: yes
     showcase:
-      - image: Sardegna.jpg
+      - image: baia-sardinia-costa-smeralda.jpg
         subtitle: Allow me to introduce myself 
         title: Biography
         url: blogs/biography
