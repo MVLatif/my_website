@@ -2,10 +2,10 @@
 categories:
 - ""
 - ""
-date: "2017-10-31T21:28:43-05:00"
+date: "2021-10-31T21:28:43-05:00"
 description: ""
 draft: false
-image: Brexit.jpg
+image: meme.jpg
 keywords: ""
 slug: brexit
 title: Brexit
@@ -28,23 +28,18 @@ brexit_results <- read_csv(here::here("data","brexit_results.csv"))
 glimpse(brexit_results)
 ```
 
-The data comes from [Elliott Morris](https://www.thecrosstab.com/), who cleaned it and made it available through his [DataCamp class on analysing election and polling data in R](https://www.datacamp.com/courses/analyzing-election-and-polling-data-in-r).
-
-Our main outcome variable (or y) is `leave_share`, which is the percent of votes cast in favour of Brexit, or leaving the EU. Each row is a UK [parliament constituency](https://en.wikipedia.org/wiki/United_Kingdom_Parliament_constituencies).
-
-To get a sense of the spread, or distribution, of the data, we can plot a histogram, a density plot, and the empirical cumulative distribution function of the leave % in all constituencies. 
+In order to understand the distribution of our data set we plotted a histogram, a density plot, and the empirical cumulative distribution function of the leave % in all constituencies. 
 
 ```{r brexit_histogram, warning=FALSE, message=FALSE}
 
-# histogram
+# This is to plot the histogram
 ggplot(brexit_results, aes(x = leave_share)) +
   geom_histogram(binwidth = 2.5) + labs(title = "Distribution of Brexit vote data",subtitle = "Spread of voting results in UK constituencies", x = "Percentage of leave vote",y = "Number of UK constituencies") +
-
-# density plot-- think smoothed histogram
+  
   geom_density()+ labs(title = "Distribution of Brexit vote data",subtitle = "Smoothed spread of voting results in UK constituencies", x = "Percentage of leave vote",y = "Number of UK constituencies")
 
 
-# The empirical cumulative distribution function (ECDF) 
+# This shows the cumulative distribution of the leave % 
 ggplot(brexit_results, aes(x = leave_share)) +
   stat_ecdf(geom = "step", pad = FALSE) +
   scale_y_continuous(labels = scales::percent) + labs(title = "Distribution of Brexit vote data",subtitle = "Cumulative distribution of voting results in UK constituencies", x = "Percentage of leave vote",y = "Cumulative frequency (%)")
@@ -53,7 +48,7 @@ ggplot(brexit_results, aes(x = leave_share)) +
 
 ```
 
-One common explanation for the Brexit outcome was fear of immigration and opposition to the EU's more open border policy. We can check the relationship (or correlation) between the proportion of native born residents (`born_in_uk`) in a constituency and its `leave_share`. To do this, let us get the correlation between the two variables
+To better understand the hypothesis that UK citizens feared immigration, we plotted a scatterplot to show the correlation between the proportion of native born residents (`born_in_uk`) in a constituency and its `leave_share`. 
 
 ```{r brexit_immigration_correlation}
 ggplot(brexit_results, aes(x = born_in_uk, y = leave_share)) +
@@ -63,9 +58,7 @@ ggplot(brexit_results, aes(x = born_in_uk, y = leave_share)) +
   NULL
 ```
 
-The correlation is almost 0.5, which shows that the two variables are positively correlated.
-
-We can also create a scatterplot between these two variables using `geom_point`. We also add the best fit line, using `geom_smooth(method = "lm")`.
+The graph shows a positive correlation. Furthermore, we added geom_smooth to add the best fit line for better visualisation of the trend.
 
 ```{r brexit_immigration_plot}
 ggplot(brexit_results, aes(x = born_in_uk, y = leave_share)) +
@@ -79,6 +72,3 @@ ggplot(brexit_results, aes(x = born_in_uk, y = leave_share)) +
   NULL
 ```
 
-You have the code for the plots, I would like you to revisit all of them and use the `labs()` function to add an informative title, subtitle, and axes titles to all plots.
-
-What can you say about the relationship shown above? Again, don't just say what's happening in the graph. Tell some sort of story and speculate about the differences in the patterns.

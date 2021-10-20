@@ -6,4 +6,4 @@ slug: blogs
 title: My Projects
 ---
 
-My blogs about technology and lifestyle.
+Allow me to introduce myself and exemplify some of the tasks I worked on with my study group over this course.
