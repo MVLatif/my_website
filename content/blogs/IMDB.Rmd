@@ -40,12 +40,6 @@ library(openintro)
 
 With my group, we explored whether or not the mean IMDB rating for Steven Spielberg and Tim Burton were the same or not. From the confidence intervals below, we noticed an overlap for the mean ratings.
 
-
-```{r directors, echo=FALSE, out.width="100%"}
-knitr::include_graphics("/img/directors.png", error = FALSE)
-```
-
-
 ```{r load-movies-data}
 movies <- read_csv(here::here("data", "movies.csv"))
 glimpse(movies)
