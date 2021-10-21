@@ -19,7 +19,7 @@ params:
     buttonClear: Clear
     buttonSend: Send message
     email:
-      - email: mlatif.mfa2022@london.edu
+      - email: 'send:mlatif.mfa2022@london.edu'
         title: Email
     enable: yes
     phone:
@@ -53,8 +53,8 @@ params:
       - name: Get Started
         url: blogs
     button2:
-      - name: Log In
-        url: '#'
+      - name: Contact
+        url: 'mailto:mlatif.mfa2022@london.edu'
     links:
       - name: Home
         url: '#'
