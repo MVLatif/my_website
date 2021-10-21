@@ -18,6 +18,7 @@ params:
         title: Address
     buttonClear: Clear
     buttonSend: Send message
+    formEmail: "/f/xoqyznez"
     email:
       - email: mlatif.mfa2022@london.edu
         title: Email
