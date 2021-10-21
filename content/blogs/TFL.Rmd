@@ -54,9 +54,6 @@ bike <- bike0 %>%
           week = isoweek(day))
 ```
 
-
-We can easily create a facet grid that plots bikes hired by month and year.
-
 ```{r tfl_month_year_grid, echo=FALSE, out.width="100%"}
 knitr::include_graphics("/img/tfl_distributions_monthly.png", error = FALSE)
 ```
@@ -66,6 +63,7 @@ knitr::include_graphics("/img/tfl_distributions_monthly.png", error = FALSE)
 knitr::include_graphics("/img/tfl_monthly.png", error = FALSE)
 ```
 
+In May and June of 2020 in comparison with the previous years, the distribution of bike rentals is a lot more flat and spread out than the corresponding distributions in the prior years. One potential explanation for this is that in May and June of the pre-Covid years, many people would be inclined to go cycling as a result of better weather patterns and for fresh air, whereas in 2020 lockdown limited the extent to which people could go out.
 
 ```{r expected rentals,out.width="100%"}
 #Calculate expected rentals and merge datasets

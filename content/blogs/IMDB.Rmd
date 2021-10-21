@@ -45,7 +45,6 @@ With my group, we explored whether or not the mean IMDB rating for Steven Spielb
 knitr::include_graphics("/img/directors.png", error = FALSE)
 ```
 
-You can load the data and examine its structure
 
 ```{r load-movies-data}
 movies <- read_csv(here::here("data", "movies.csv"))
