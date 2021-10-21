@@ -2,10 +2,10 @@
 categories:
 - ""
 - ""
-date: "2017-10-31T21:28:43-05:00"
+date: "2021-10-31T21:28:43-05:00"
 description: ""
 draft: false
-image: JP.jpg
+image: cat.jpg
 keywords: ""
 slug: imdb
 title: IMDB ratings
@@ -16,31 +16,24 @@ title: IMDB ratings
 
 <div id="imdb-ratings-differences-between-directors" class="section level1">
 <h1>IMDB ratings: Differences between directors</h1>
-<p>Recall the IMBD ratings data. I would like you to explore whether the mean IMDB rating for Steven Spielberg and Tim Burton are the same or not. I have already calculated the confidence intervals for the mean ratings of these two directors and as you can see they overlap.</p>
+<p>With my group, we explored whether or not the mean IMDB rating for Steven Spielberg and Tim Burton were the same or not. From the confidence intervals below, we noticed an overlap for the mean ratings.</p>
 <p><img src="/img/directors.png" width="100%" /></p>
-<p>First, I would like you to reproduce this graph. You may find <code>geom_errorbar()</code> and <code>geom_rect()</code> useful.</p>
-<p>I would like you to explore whether the mean IMDB rating for Steven Spielberg and Tim Burton are the same or not. Then I ran a hypothesis test using both t.test and infer package to understand from a null distribution where I would assume zero difference between the two
-In addition, you will run a hpothesis test. You should use both the <code>t.test</code> command and the <code>infer</code> package to simulate from a null distribution, where you assume zero difference between the two.</p>
-<blockquote>
-<p>Before anything, write down the null and alternative hypotheses, as well as the resulting test statistic and the associated t-stat or p-value. At the end of the day, what do you conclude?</p>
-</blockquote>
 <p>You can load the data and examine its structure</p>
 <pre class="r"><code>movies &lt;- read_csv(here::here(&quot;data&quot;, &quot;movies.csv&quot;))
 glimpse(movies)</code></pre>
 <pre><code>## Rows: 2,961
 ## Columns: 11
-## $ title               &lt;chr&gt; &quot;Avatar&quot;, &quot;Titanic&quot;, &quot;Jurassic World&quot;, &quot;The Avenge…
-## $ genre               &lt;chr&gt; &quot;Action&quot;, &quot;Drama&quot;, &quot;Action&quot;, &quot;Action&quot;, &quot;Action&quot;, &quot;…
-## $ director            &lt;chr&gt; &quot;James Cameron&quot;, &quot;James Cameron&quot;, &quot;Colin Trevorrow…
-## $ year                &lt;dbl&gt; 2009, 1997, 2015, 2012, 2008, 1999, 1977, 2015, 20…
-## $ duration            &lt;dbl&gt; 178, 194, 124, 173, 152, 136, 125, 141, 164, 93, 1…
-## $ gross               &lt;dbl&gt; 7.61e+08, 6.59e+08, 6.52e+08, 6.23e+08, 5.33e+08, …
-## $ budget              &lt;dbl&gt; 2.37e+08, 2.00e+08, 1.50e+08, 2.20e+08, 1.85e+08, …
-## $ cast_facebook_likes &lt;dbl&gt; 4834, 45223, 8458, 87697, 57802, 37723, 13485, 920…
-## $ votes               &lt;dbl&gt; 886204, 793059, 418214, 995415, 1676169, 534658, 9…
-## $ reviews             &lt;dbl&gt; 3777, 2843, 1934, 2425, 5312, 3917, 1752, 1752, 35…
-## $ rating              &lt;dbl&gt; 7.9, 7.7, 7.0, 8.1, 9.0, 6.5, 8.7, 7.5, 8.5, 7.2, …</code></pre>
-<p>Your R code and analysis should go here. If you want to insert a blank chunk of R code you can just hit <code>Ctrl/Cmd+Alt+I</code></p>
+## $ title               &lt;chr&gt; &quot;Avatar&quot;, &quot;Titanic&quot;, &quot;Jurassic World&quot;, &quot;The Avenge~
+## $ genre               &lt;chr&gt; &quot;Action&quot;, &quot;Drama&quot;, &quot;Action&quot;, &quot;Action&quot;, &quot;Action&quot;, &quot;~
+## $ director            &lt;chr&gt; &quot;James Cameron&quot;, &quot;James Cameron&quot;, &quot;Colin Trevorrow~
+## $ year                &lt;dbl&gt; 2009, 1997, 2015, 2012, 2008, 1999, 1977, 2015, 20~
+## $ duration            &lt;dbl&gt; 178, 194, 124, 173, 152, 136, 125, 141, 164, 93, 1~
+## $ gross               &lt;dbl&gt; 7.61e+08, 6.59e+08, 6.52e+08, 6.23e+08, 5.33e+08, ~
+## $ budget              &lt;dbl&gt; 2.37e+08, 2.00e+08, 1.50e+08, 2.20e+08, 1.85e+08, ~
+## $ cast_facebook_likes &lt;dbl&gt; 4834, 45223, 8458, 87697, 57802, 37723, 13485, 920~
+## $ votes               &lt;dbl&gt; 886204, 793059, 418214, 995415, 1676169, 534658, 9~
+## $ reviews             &lt;dbl&gt; 3777, 2843, 1934, 2425, 5312, 3917, 1752, 1752, 35~
+## $ rating              &lt;dbl&gt; 7.9, 7.7, 7.0, 8.1, 9.0, 6.5, 8.7, 7.5, 8.5, 7.2, ~</code></pre>
 <pre class="r"><code># Select Tim Burton and Steven Spielberg and filter for director and rating
 rating_analysis &lt;- movies %&gt;% filter(director == &quot;Steven Spielberg&quot; | director == &quot;Tim Burton&quot;) %&gt;% select(director, rating) %&gt;% group_by(director)
 
@@ -59,42 +52,35 @@ summary_stat &lt;- rating_analysis %&gt;%
     lower = mean_rating - t_critical * se_rating,
     upper = mean_rating + t_critical * se_rating
   ) </code></pre>
-<pre class="r"><code># Create plot
-summary_stat %&gt;% 
+<pre class="r"><code>summary_stat %&gt;% 
   
-  # Define aesthetics and reorder so that Steven Spielberh is shown on top
+  # Reorder to show Steven Spielberg on top 
   ggplot(aes(x=mean_rating, y=reorder(director, mean_rating), xmin=lower,xmax=upper)) +
   
-  # Add mean
   geom_point(color=c(&quot;orangered1&quot;, &quot;turquoise4&quot;), size=4) + 
   
-  # Add error bars
   geom_errorbar(aes(xmin=lower,xmax=upper), color=c(&quot;orangered1&quot;, &quot;turquoise4&quot;), 
                 size=1, width=0.1) +
   
-  # Add labels to mean value
   geom_text(aes(label=round(mean_rating, digits=2)), size=5, vjust=-1.5)+
   
-  # Add confidence interval overlap
+  # Added the confidence interval to see the overlap 
   geom_rect(xmin=7.27, xmax= 7.33, ymin=-Inf, ymax=+Inf, alpha=0.2, fill=&quot;grey&quot;) +
   
-  # Define Theme
   theme_bw()+
   
-  #Add titles
   labs(title = &quot;Do Spielberg and Burton have the same mean IMDB ratings?&quot;, 
        subtitle = &quot;95% confidence intervals overlap&quot;,
        x=&quot;Mean IMDB Rating&quot;, y=&quot;Director&quot;)+
   theme(text = element_text(size = 12))</code></pre>
 <p><img src="/blogs/IMDB_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
-<pre class="r"><code># Hypothesis test - H0: Tim Burton and Steven Spielberg films have the same mean 
+<pre class="r"><code># The hypothesis H0 was that both directors had the same mean rating
 
-# use the infer package to construct a 95% CI for rating
+# We then constructed a 95% CI for rating
 library(infer)
 set.seed(1234)
 n &lt;-1000
 
-#Generate the samples and calculate variable of interest for Spielberg
 boot_meanrating_Spielberg &lt;- rating_analysis %&gt;%
   filter(!is.na(rating) | director ==&quot;Steven Spielberg&quot; ) %&gt;% 
   #Specify variable of interest
@@ -104,7 +90,6 @@ boot_meanrating_Spielberg &lt;- rating_analysis %&gt;%
   #Calculate mean of each sample
   calculate(stat=&quot;mean&quot;)
 
-#Generate the samples and calculate variable of interest for Burton
 boot_meanrating_Burton &lt;- rating_analysis %&gt;%
   filter(!is.na(rating) | director ==&quot;Tim Burton&quot; ) %&gt;% 
   #Specify variable of interest

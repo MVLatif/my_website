@@ -2,10 +2,10 @@
 categories:
 - ""
 - ""
-date: "2017-10-31T21:28:43-05:00"
+date: "2021-10-31T21:28:43-05:00"
 description: ""
 draft: false
-image: Brexit.jpg
+image: meme.jpg
 keywords: ""
 slug: brexit
 title: Brexit
@@ -20,33 +20,30 @@ title: Brexit
 glimpse(brexit_results)</code></pre>
 <pre><code>## Rows: 632
 ## Columns: 11
-## $ Seat        &lt;chr&gt; &quot;Aldershot&quot;, &quot;Aldridge-Brownhills&quot;, &quot;Altrincham and Sale W…
-## $ con_2015    &lt;dbl&gt; 50.592, 52.050, 52.994, 43.979, 60.788, 22.418, 52.454, 22…
-## $ lab_2015    &lt;dbl&gt; 18.333, 22.369, 26.686, 34.781, 11.197, 41.022, 18.441, 49…
-## $ ld_2015     &lt;dbl&gt; 8.824, 3.367, 8.383, 2.975, 7.192, 14.828, 5.984, 2.423, 1…
-## $ ukip_2015   &lt;dbl&gt; 17.867, 19.624, 8.011, 15.887, 14.438, 21.409, 18.821, 21.…
-## $ leave_share &lt;dbl&gt; 57.89777, 67.79635, 38.58780, 65.29912, 49.70111, 70.47289…
-## $ born_in_uk  &lt;dbl&gt; 83.10464, 96.12207, 90.48566, 97.30437, 93.33793, 96.96214…
-## $ male        &lt;dbl&gt; 49.89896, 48.92951, 48.90621, 49.21657, 48.00189, 49.17185…
-## $ unemployed  &lt;dbl&gt; 3.637000, 4.553607, 3.039963, 4.261173, 2.468100, 4.742731…
-## $ degree      &lt;dbl&gt; 13.870661, 9.974114, 28.600135, 9.336294, 18.775591, 6.085…
-## $ age_18to24  &lt;dbl&gt; 9.406093, 7.325850, 6.437453, 7.747801, 5.734730, 8.209863…</code></pre>
-<p>The data comes from <a href="https://www.thecrosstab.com/">Elliott Morris</a>, who cleaned it and made it available through his <a href="https://www.datacamp.com/courses/analyzing-election-and-polling-data-in-r">DataCamp class on analysing election and polling data in R</a>.</p>
-<p>Our main outcome variable (or y) is <code>leave_share</code>, which is the percent of votes cast in favour of Brexit, or leaving the EU. Each row is a UK <a href="https://en.wikipedia.org/wiki/United_Kingdom_Parliament_constituencies">parliament constituency</a>.</p>
-<p>To get a sense of the spread, or distribution, of the data, we can plot a histogram, a density plot, and the empirical cumulative distribution function of the leave % in all constituencies.</p>
-<pre class="r"><code># histogram
+## $ Seat        &lt;chr&gt; &quot;Aldershot&quot;, &quot;Aldridge-Brownhills&quot;, &quot;Altrincham and Sale W~
+## $ con_2015    &lt;dbl&gt; 50.592, 52.050, 52.994, 43.979, 60.788, 22.418, 52.454, 22~
+## $ lab_2015    &lt;dbl&gt; 18.333, 22.369, 26.686, 34.781, 11.197, 41.022, 18.441, 49~
+## $ ld_2015     &lt;dbl&gt; 8.824, 3.367, 8.383, 2.975, 7.192, 14.828, 5.984, 2.423, 1~
+## $ ukip_2015   &lt;dbl&gt; 17.867, 19.624, 8.011, 15.887, 14.438, 21.409, 18.821, 21.~
+## $ leave_share &lt;dbl&gt; 57.89777, 67.79635, 38.58780, 65.29912, 49.70111, 70.47289~
+## $ born_in_uk  &lt;dbl&gt; 83.10464, 96.12207, 90.48566, 97.30437, 93.33793, 96.96214~
+## $ male        &lt;dbl&gt; 49.89896, 48.92951, 48.90621, 49.21657, 48.00189, 49.17185~
+## $ unemployed  &lt;dbl&gt; 3.637000, 4.553607, 3.039963, 4.261173, 2.468100, 4.742731~
+## $ degree      &lt;dbl&gt; 13.870661, 9.974114, 28.600135, 9.336294, 18.775591, 6.085~
+## $ age_18to24  &lt;dbl&gt; 9.406093, 7.325850, 6.437453, 7.747801, 5.734730, 8.209863~</code></pre>
+<p>In order to understand the distribution of our data set we plotted a histogram, a density plot, and the empirical cumulative distribution function of the leave % in all constituencies.</p>
+<pre class="r"><code># This is to plot the histogram
 ggplot(brexit_results, aes(x = leave_share)) +
   geom_histogram(binwidth = 2.5) + labs(title = &quot;Distribution of Brexit vote data&quot;,subtitle = &quot;Spread of voting results in UK constituencies&quot;, x = &quot;Percentage of leave vote&quot;,y = &quot;Number of UK constituencies&quot;) +
-
-# density plot-- think smoothed histogram
+  
   geom_density()+ labs(title = &quot;Distribution of Brexit vote data&quot;,subtitle = &quot;Smoothed spread of voting results in UK constituencies&quot;, x = &quot;Percentage of leave vote&quot;,y = &quot;Number of UK constituencies&quot;)</code></pre>
 <p><img src="/blogs/Brexit_files/figure-html/brexit_histogram-1.png" width="672" /></p>
-<pre class="r"><code># The empirical cumulative distribution function (ECDF) 
+<pre class="r"><code># This shows the cumulative distribution of the leave % 
 ggplot(brexit_results, aes(x = leave_share)) +
   stat_ecdf(geom = &quot;step&quot;, pad = FALSE) +
   scale_y_continuous(labels = scales::percent) + labs(title = &quot;Distribution of Brexit vote data&quot;,subtitle = &quot;Cumulative distribution of voting results in UK constituencies&quot;, x = &quot;Percentage of leave vote&quot;,y = &quot;Cumulative frequency (%)&quot;)</code></pre>
 <p><img src="/blogs/Brexit_files/figure-html/brexit_histogram-2.png" width="672" /></p>
-<p>One common explanation for the Brexit outcome was fear of immigration and opposition to the EU’s more open border policy. We can check the relationship (or correlation) between the proportion of native born residents (<code>born_in_uk</code>) in a constituency and its <code>leave_share</code>. To do this, let us get the correlation between the two variables</p>
+<p>To better understand the hypothesis that UK citizens feared immigration, we plotted a scatterplot to show the correlation between the proportion of native born residents (<code>born_in_uk</code>) in a constituency and its <code>leave_share</code>.</p>
 <pre class="r"><code>ggplot(brexit_results, aes(x = born_in_uk, y = leave_share)) +
   geom_point(alpha=0.3) +
   geom_smooth(method = &quot;lm&quot;) + labs(title = &quot;Relationship between native born residents and leave votes&quot;,subtitle = &quot;Scatter plot of leave votes and ethnicity from different UK constituencies&quot;, x = &quot;Proportion of native born residents in a UK constituency&quot;,y = &quot;Percentage of leave votes&quot;)+
@@ -54,8 +51,7 @@ ggplot(brexit_results, aes(x = leave_share)) +
   NULL</code></pre>
 <pre><code>## `geom_smooth()` using formula &#39;y ~ x&#39;</code></pre>
 <p><img src="/blogs/Brexit_files/figure-html/brexit_immigration_correlation-1.png" width="672" /></p>
-<p>The correlation is almost 0.5, which shows that the two variables are positively correlated.</p>
-<p>We can also create a scatterplot between these two variables using <code>geom_point</code>. We also add the best fit line, using <code>geom_smooth(method = "lm")</code>.</p>
+<p>The graph shows a positive correlation. Furthermore, we added geom_smooth to add the best fit line for better visualisation of the trend.</p>
 <pre class="r"><code>ggplot(brexit_results, aes(x = born_in_uk, y = leave_share)) +
   geom_point(alpha=0.3) +
   
@@ -67,5 +63,3 @@ ggplot(brexit_results, aes(x = leave_share)) +
   NULL</code></pre>
 <pre><code>## `geom_smooth()` using formula &#39;y ~ x&#39;</code></pre>
 <p><img src="/blogs/Brexit_files/figure-html/brexit_immigration_plot-1.png" width="672" /></p>
-<p>You have the code for the plots, I would like you to revisit all of them and use the <code>labs()</code> function to add an informative title, subtitle, and axes titles to all plots.</p>
-<p>What can you say about the relationship shown above? Again, don’t just say what’s happening in the graph. Tell some sort of story and speculate about the differences in the patterns.</p>
