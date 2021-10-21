@@ -2,10 +2,10 @@
 categories:
 - ""
 - ""
-date: "2020-10-31T21:28:43-05:00"
+date: "2021-10-31T21:28:43-05:00"
 description: ""
 draft: false
-image: cat.jpg
+image: ""
 keywords: ""
 slug: imdb
 title: IMDB ratings
