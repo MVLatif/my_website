@@ -19,7 +19,7 @@ params:
     buttonClear: Clear
     buttonSend: Send message
     email:
-      - email: 'send:mlatif.mfa2022@london.edu'
+      - email: mlatif.mfa2022@london.edu
         title: Email
     enable: yes
     phone:
