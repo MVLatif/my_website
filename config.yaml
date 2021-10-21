@@ -88,7 +88,7 @@ params:
         url: blogs/tfl
   two:
     buttonText: Get Started
-    enable: yes
+    enable: no
     subtitle: Welcome to my website where I have outlined a few things I enjoy to do in my spare time and to give a bit of insight into my life and background. 
     title: Introduction 
     url: blogs
