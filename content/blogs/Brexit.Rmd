@@ -10,7 +10,6 @@ keywords: ""
 slug: brexit
 title: Brexit
 ---
-
 ```{r load-libraries, warning=FALSE, message=FALSE, echo=FALSE}
 
 library(tidyverse)  # Load ggplot2, dplyr, and all the other tidyverse packages

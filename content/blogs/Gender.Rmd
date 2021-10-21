@@ -10,9 +10,6 @@ keywords: ""
 slug: gender
 title: Pay Discrimination
 ---
-
-
-
 ```{r, setup, echo=FALSE}
 knitr::opts_chunk$set(
   message = FALSE, 

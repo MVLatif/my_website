@@ -10,8 +10,6 @@ keywords: ""
 slug: imdb
 title: IMDB ratings
 ---
-
-
 ```{r, setup, echo=FALSE}
 knitr::opts_chunk$set(
   message = FALSE, 
